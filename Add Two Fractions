@@ -1,0 +1,30 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner in = new Scanner(System.in);
+        int T = in.nextInt();
+        for(int t=0;t<T;t++){
+            int num1 = in.nextInt();
+            int den1 = in.nextInt();
+            int num2 = in.nextInt();
+            int den2 = in.nextInt();
+            int res_num = num1*den2 + den1*num2;
+            int res_den = den1*den2;
+            int a = res_num;
+            int b = res_den;
+            while (b != 0) {
+                int temp = b;
+                b = a % b;
+                a = temp;
+            }
+            int gcd = a;
+            res_num /= gcd;
+            res_den /= gcd;
+            System.out.print(res_num+ "/" +res_den);
+        }
+    }
+}
