@@ -1,0 +1,30 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int L = in.nextInt();
+        int R = in.nextInt();
+        for(int i=L;i<=R;i++){
+            int num =i;
+          boolean[] digits = new boolean[10];
+            boolean Unique = true;
+            while (num > 0) {
+                int digit = num % 10;
+                if (digits[digit]) {
+                    Unique = false;
+                    break;
+                }
+                 digits[digit] = true;
+                num /= 10;
+        }
+             if (Unique) {
+                System.out.print(i + " ");
+            }
+        
+    }
+}
+}
+
